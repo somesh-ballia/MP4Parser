@@ -33,7 +33,7 @@
 #include <conio.h>
 #include "MP4.Parser.h"
 
-#define PATH "D:\\123.mp4"
+//#define PATH "D:\\123.mp4"
 
 int main( int argc, char * argv[] )
 {
@@ -41,10 +41,11 @@ int main( int argc, char * argv[] )
     
     if( argc != 2 )
     {
-        std::cout << "Usage: " << PATH << " FILENAME\n";
+        std::cout << "Usage: " << argv[0] << " FILENAME\n";
+		return EXIT_FAILURE;
     }
     
-    parser = new MP4::Parser( PATH );
+    parser = new MP4::Parser( argv[1] );
     
     delete parser;
     _getch();
